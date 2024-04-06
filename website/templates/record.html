@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+<h1>
+	HEY SSUP!!!!
+</h1>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <b><i>{{customer_record.first_name }} {{customer_record.last_name}}</i></b>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>ID    : </b>{{customer_record.id}}</li>
+    <li class="list-group-item"><b>NAME  : </b>{{customer_record.first_name }} {{customer_record.last_name}}</li>
+    <li class="list-group-item"><b>EMAIL : </b>{{customer_record.email}}</li>
+    <li class="list-group-item"><b>PHONE : </b>{{customer_record.phone}}</li>
+  </ul>
+</div>
+<br>
+<a href="{% url 'home' %}" class='btn btn-primary'>Back</a>
+<a href="{% url 'delete_record' customer_record.id %}" class='btn btn-danger'>DELETE</a>
+<a href="{% url 'update' customer_record.id %}" class='btn btn-primary'>Update</a>
+
+
+{% endblock%}
